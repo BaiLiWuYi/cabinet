@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.cabinet.AnXin_file.define.ACK_CODE;
+import com.cabinet.AnXin_file.define.TASK_OPT_RES;
 import com.cabinet.AnXin_file.jEntity.CommonAckJEntity;
 import com.cabinet.AnXin_file.jEntity.TaskDownAckJEntity;
 import com.cabinet.AnXin_file.jEntity.TaskDownJEntity;
@@ -28,8 +29,15 @@ public class TaskController {
 		if (!LoginService.isLogined(task.getToken())) {
 			return LoginService.commonTokenErrAckJEntity();
 		}
-		
-		
+				
+		switch (taskService.addTask(task)) {
+		case value:
+			
+			break;
+
+		default:
+			break;
+		}
 	}
 	
 }
